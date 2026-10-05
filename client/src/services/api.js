@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// Backend சர்வரின் முகவரி (உங்களது போர்ட் எண்ணிற்கு ஏற்ப மாற்றிக்கொள்ளலாம்)
-const API_URL = 'http://localhost:5000'; 
+const API_URL = 'http://localhost:5000/api'; 
 
 const api = axios.create({
   baseURL: API_URL,
@@ -10,9 +9,10 @@ const api = axios.create({
   },
 });
 
-// Request செய்யும் போது யூசரின் டோக்கனை (Token) அனுப்பும் செட்டப்
+// Request interceptor to attach JWT token
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
+  const user = JSON.parse(localStorage.getItem('user') || 'null');
+  const token = localStorage.getItem('token') || user?.token;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -25,10 +25,10 @@ api.interceptors.request.use((config) => {
 export const loginUser = (data) => api.post('/auth/login', data);
 export const registerUser = (data) => api.post('/auth/register', data);
 
-// டேஷ்போர்டு மதிப்புகளை சர்வரில் இருந்து வாங்கும் फंக்ஷன்கள் (API Calls)
-export const getAppointments = () => api.get('/api/appointments');
-export const getMedicalRecords = () => api.get('/api/records');
-export const getPrescriptions = () => api.get('/api/prescriptions');
-export const getPendingBills = () => api.get('/api/bills');
+// Dashboard data fetches
+export const getAppointments = () => api.get('/appointments');
+export const getMedicalRecords = () => api.get('/medical-records');
+export const getPrescriptions = () => api.get('/prescriptions');
+export const getPendingBills = () => api.get('/bills');
 
 export default api;

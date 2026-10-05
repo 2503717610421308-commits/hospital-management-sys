@@ -31,6 +31,9 @@ export const AuthProvider = ({ children }) => {
       const userData = res.data.data;
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
+      if (userData.token) {
+        localStorage.setItem('token', userData.token);
+      }
       await loadProfile();
       return { success: true, role: userData.role };
     } catch (err) {
