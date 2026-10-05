@@ -9,7 +9,7 @@ const departmentSchema = new mongoose.Schema({
   isActive: { type: Boolean, default: true }
 }, { timestamps: true });
 
-departmentSchema.pre('save', async function (next) {
+departmentSchema.pre('validate', async function (next) {
   if (!this.departmentId) {
     const count = await mongoose.model('Department').countDocuments();
     this.departmentId = 'DEPT-' + String(count + 1).padStart(3, '0');

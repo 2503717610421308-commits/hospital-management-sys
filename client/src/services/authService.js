@@ -1,6 +1,6 @@
 import API from './api';
 
-export const login = (data) => API.post('/auth/login', data);
-export const register = (data) => API.post('/auth/register', data);
-export const getMe = () => API.get('/auth/me');
-export const updateProfile = (data) => API.put('/auth/profile', data);
+export const login = (data) => API.post('/api/auth/login', data);
+export const register = (data) => API.post('/api/auth/register', data);
+export const getMe = () => API.get('/api/auth/me');
+export const updateProfile = (data) => API.put('/api/auth/profile', data);

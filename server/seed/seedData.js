@@ -35,14 +35,14 @@ const seedDB = async () => {
 
     // Create departments
     const departments = await Department.insertMany([
-      { departmentName: 'Cardiology', description: 'Heart and cardiovascular system', location: 'Building A, Floor 2' },
-      { departmentName: 'Neurology', description: 'Brain and nervous system', location: 'Building A, Floor 3' },
-      { departmentName: 'Orthopedics', description: 'Bones, joints and muscles', location: 'Building B, Floor 1' },
-      { departmentName: 'Pediatrics', description: 'Children healthcare', location: 'Building B, Floor 2' },
-      { departmentName: 'Dermatology', description: 'Skin, hair and nails', location: 'Building C, Floor 1' },
-      { departmentName: 'General Medicine', description: 'General healthcare services', location: 'Building A, Floor 1' },
-      { departmentName: 'ENT', description: 'Ear, nose and throat', location: 'Building C, Floor 2' },
-      { departmentName: 'Ophthalmology', description: 'Eye care and surgery', location: 'Building C, Floor 3' }
+      { departmentId: 'DEPT-001', departmentName: 'Cardiology', description: 'Heart and cardiovascular system', location: 'Building A, Floor 2' },
+      { departmentId: 'DEPT-002', departmentName: 'Neurology', description: 'Brain and nervous system', location: 'Building A, Floor 3' },
+      { departmentId: 'DEPT-003', departmentName: 'Orthopedics', description: 'Bones, joints and muscles', location: 'Building B, Floor 1' },
+      { departmentId: 'DEPT-004', departmentName: 'Pediatrics', description: 'Children healthcare', location: 'Building B, Floor 2' },
+      { departmentId: 'DEPT-005', departmentName: 'Dermatology', description: 'Skin, hair and nails', location: 'Building C, Floor 1' },
+      { departmentId: 'DEPT-006', departmentName: 'General Medicine', description: 'General healthcare services', location: 'Building A, Floor 1' },
+      { departmentId: 'DEPT-007', departmentName: 'ENT', description: 'Ear, nose and throat', location: 'Building C, Floor 2' },
+      { departmentId: 'DEPT-008', departmentName: 'Ophthalmology', description: 'Eye care and surgery', location: 'Building C, Floor 3' }
     ]);
     console.log('Departments seeded.');
 
@@ -95,14 +95,14 @@ const seedDB = async () => {
 
     // Create Medicines
     const medicines = await Medicine.insertMany([
-      { medicineName: 'Paracetamol 500mg', description: 'Pain reliever and fever reducer', category: 'Analgesic', stock: 500, price: 5, manufacturer: 'Cipla' },
-      { medicineName: 'Amoxicillin 250mg', description: 'Antibiotic', category: 'Antibiotic', stock: 300, price: 12, manufacturer: 'Sun Pharma' },
-      { medicineName: 'Omeprazole 20mg', description: 'Reduces stomach acid', category: 'Antacid', stock: 200, price: 8, manufacturer: 'Dr. Reddy' },
-      { medicineName: 'Metformin 500mg', description: 'Diabetes medication', category: 'Antidiabetic', stock: 400, price: 6, manufacturer: 'Lupin' },
-      { medicineName: 'Amlodipine 5mg', description: 'Blood pressure medication', category: 'Antihypertensive', stock: 350, price: 10, manufacturer: 'Cipla' },
-      { medicineName: 'Cetirizine 10mg', description: 'Antihistamine for allergies', category: 'Antihistamine', stock: 600, price: 4, manufacturer: 'Sun Pharma' },
-      { medicineName: 'Ibuprofen 400mg', description: 'Anti-inflammatory', category: 'NSAID', stock: 450, price: 7, manufacturer: 'Mankind' },
-      { medicineName: 'Azithromycin 500mg', description: 'Antibiotic for infections', category: 'Antibiotic', stock: 250, price: 15, manufacturer: 'Cipla' }
+      { medicineId: 'MED-00001', medicineName: 'Paracetamol 500mg', description: 'Pain reliever and fever reducer', category: 'Analgesic', stock: 500, price: 5, manufacturer: 'Cipla' },
+      { medicineId: 'MED-00002', medicineName: 'Amoxicillin 250mg', description: 'Antibiotic', category: 'Antibiotic', stock: 300, price: 12, manufacturer: 'Sun Pharma' },
+      { medicineId: 'MED-00003', medicineName: 'Omeprazole 20mg', description: 'Reduces stomach acid', category: 'Antacid', stock: 200, price: 8, manufacturer: 'Dr. Reddy' },
+      { medicineId: 'MED-00004', medicineName: 'Metformin 500mg', description: 'Diabetes medication', category: 'Antidiabetic', stock: 400, price: 6, manufacturer: 'Lupin' },
+      { medicineId: 'MED-00005', medicineName: 'Amlodipine 5mg', description: 'Blood pressure medication', category: 'Antihypertensive', stock: 350, price: 10, manufacturer: 'Cipla' },
+      { medicineId: 'MED-00006', medicineName: 'Cetirizine 10mg', description: 'Antihistamine for allergies', category: 'Antihistamine', stock: 600, price: 4, manufacturer: 'Sun Pharma' },
+      { medicineId: 'MED-00007', medicineName: 'Ibuprofen 400mg', description: 'Anti-inflammatory', category: 'NSAID', stock: 450, price: 7, manufacturer: 'Mankind' },
+      { medicineId: 'MED-00008', medicineName: 'Azithromycin 500mg', description: 'Antibiotic for infections', category: 'Antibiotic', stock: 250, price: 15, manufacturer: 'Cipla' }
     ]);
     console.log('Medicines seeded.');
 

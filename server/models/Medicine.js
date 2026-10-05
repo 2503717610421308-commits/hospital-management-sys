@@ -11,7 +11,7 @@ const medicineSchema = new mongoose.Schema({
   expiryDate: { type: Date }
 }, { timestamps: true });
 
-medicineSchema.pre('save', async function (next) {
+medicineSchema.pre('validate', async function (next) {
   if (!this.medicineId) {
     const count = await mongoose.model('Medicine').countDocuments();
     this.medicineId = 'MED-' + String(count + 1).padStart(5, '0');
